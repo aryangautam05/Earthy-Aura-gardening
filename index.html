@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Earthy Aura Gardening Services</title>
+<style>
+  /* Root Variables */
+  :root {
+    --color-background: #ffffff;
+    --color-primary: #1f4d2a;
+    --color-secondary: #88b04b;
+    --color-accent: #a4c639;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+    --color-card-bg: #f9fafb;
+    --color-shadow: rgba(107, 114, 128, 0.15);
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap');
+
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin:0;
+    background: var(--color-background);
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+  }
+  a:hover,
+  a:focus {
+    color: var(--color-secondary);
+    outline: none;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    margin-top: 0;
+    font-weight: 700;
+    line-height: 1.15;
+    user-select: text;
+  }
+  h1 {
+    font-size: 4.5rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+    user-select: text;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
+  }
+
+  /* Header and navigation */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--color-background);
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 999;
+    user-select: none;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .logo {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    user-select: text;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: var(--color-secondary);
+    color: white;
+    outline: none;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #eaf4e6, #c5dca0);
+    text-align: center;
+    padding: 6rem 1rem 8rem;
+    user-select: none;
+  }
+  .hero h1 {
+    color: var(--color-primary);
+    text-shadow: none;
+  }
+  .hero p {
+    font-weight: 600;
+    font-size: 1.6rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    user-select: text;
+  }
+  .btn-primary {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    background-color: #111111;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.3);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: var(--color-primary);
+    color: white;
+    transform: scale(1.05);
+    outline: none;
+    box-shadow: 0 12px 40px rgba(31,77,42,0.8);
+  }
+
+  /* Section spacing */
+  section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  section + section {
+    margin-top: 3rem;
+  }
+
+  /* About Section */
+  .about {
+    background: var(--color-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 10px var(--color-shadow);
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: text;
+  }
+
+  /* Services Section */
+  .services {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: 2.5rem;
+  }
+  .service-card {
+    background: var(--color-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    padding: 2rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover,
+  .service-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(31,77,42,0.35);
+    outline: none;
+  }
+  .service-card img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    user-select: none;
+  }
+  .service-card h3 {
+    margin: 0 0 0.5rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  .service-card p {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    user-select: text;
+  }
+  .service-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    margin-top: 1rem;
+  }
+
+  /* Gallery Section */
+  .gallery {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+    gap: 1.5rem;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(31,77,42,0.1);
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .gallery img:hover,
+  .gallery img:focus {
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px rgba(31,77,42,0.25);
+    outline: none;
+  }
+
+  /* Large Content Section */
+  .large-content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-secondary);
+    background: var(--color-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px var(--color-shadow);
+    padding: 3rem 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    user-select: text;
+  }
+
+  /* Disclaimer Section */
+  .disclaimer {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    background: var(--color-card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+    user-select: text;
+  }
+
+  /* Customer Satisfaction Section */
+  .customer-satisfaction {
+    background: var(--color-secondary);
+    color: white;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-radius: 0.75rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    box-shadow: 0 10px 32px rgba(136,176,75,0.85);
+    user-select: text;
+  }
+  .customer-satisfaction h2 {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  .customer-satisfaction p {
+    font-size: 1.35rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 1rem;
+    user-select: none;
+  }
+  footer address {
+    font-style: normal;
+    line-height: 1.6;
+    user-select: text;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+    }
+    .nav-links {
+      gap: 1rem;
+    }
+    .services {
+      grid-template-columns: 1fr;
+    }
+    .gallery {
+      grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    }
+  }
+
+</style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary navigation">
+      <div class="logo">Earthy Aura</div>
+      <div class="nav-links">
+       <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" role="banner" aria-label="Earthy Aura Gardening Services Hero">
+      <div class="container">
+        <h1>Earthy Aura Gardening</h1>
+        <p>Nurture your garden with love and expertise — cultivating beauty one leaf at a time.</p>
+        <button class="btn-primary" type="button" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" aria-label="Browse our gardening services">Explore Our Services</button>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About Earthy Aura</h2>
+        <p>At Earthy Aura Gardening, we believe that every garden is a personal sanctuary. Our team of passionate horticulturists specializes in creating vibrant, thriving outdoor spaces inspired by nature’s finest elements.</p>
+        <p>We understand that gardening is more than just planting—it’s an expression of art, relaxation, and sustainable living. That’s why we offer personalized gardening solutions tailored to your unique environment and preferences.</p>
+        <p>From serene backyard retreats to lush community greenspaces, Earthy Aura delivers excellence, creativity, and care at every step.</p>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title" class="services-section">
+      <h2 id="services-title" style="text-align:center;">Our Gardening Services &amp; Pricing</h2>
+      <div class="services container" role="list">
+        <article class="service-card" role="listitem" tabindex="0" aria-label="Garden Design Service - $500">
+          <img src="s1.jpg" alt="Garden Design Plan" loading="lazy" />
+          <h3>Garden Design</h3>
+          <p>Tailored garden layouts blending aesthetics and functionality to bring your vision to life with expert planning.</p>
+          <div class="service-price">$500</div>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0" aria-label="Seasonal Garden Maintenance - $120 per visit">
+          <img src="s2.jpg" alt="Seasonal Garden Maintenance" loading="lazy" />
+          <h3>Seasonal Garden Maintenance</h3>
+          <p>Comprehensive upkeep to keep your garden flourishing through the seasons, ensuring vibrant health year-round.</p>
+          <div class="service-price">$120 per visit</div>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0" aria-label="Organic Pest Control - $150">
+          <img src="s3.jpg" alt="Organic Pest Control" loading="lazy" />
+          <h3>Organic Pest Control</h3>
+          <p>Safe and eco-friendly pest management solutions that protect your plants and the surrounding environment.</p>
+          <div class="service-price">$150</div>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0" aria-label="Lawn Care & Fertilization - $100 per visit">
+          <img src="s4.jpg" alt="Lawn Care and Fertilization" loading="lazy" />
+          <h3>Lawn Care & Fertilization</h3>
+          <p>Expert lawn treatment and fertilization programs to foster lush, green, and healthy grass coverage.</p>
+          <div class="service-price">$100 per visit</div>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0" aria-label="Tree & Shrub Pruning - $200">
+          <img src="s5.jpg" alt="Tree and Shrub Pruning" loading="lazy"/>
+          <h3>Tree & Shrub Pruning</h3>
+          <p>Precision pruning to boost growth, appearance, and health of your trees and shrubs throughout the year.</p>
+          <div class="service-price">$200</div>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0" aria-label="Irrigation System Installation - $650">
+          <img src="s6.jpg" alt="Irrigation System Installation" loading="lazy" />
+          <h3>Irrigation System Installation</h3>
+          <p>Smart watering solutions designed to conserve water while ensuring optimal hydration for your garden.</p>
+          <div class="service-price">$650</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" aria-label="Garden Image Gallery" class="gallery-section">
+      <h2 style="text-align:center;">Gallery</h2>
+      <div class="gallery container" role="list">
+         <img src="g1.jpg" alt="Beautiful flower bed with mixed color blooms" loading="lazy" />
+         <img src="g2.jpg" alt="Well-manicured green lawn with trees" loading="lazy" />
+         <img src="g3.jpg" alt="Sunlight shining through lush garden trees" loading="lazy" />
+         <img src="g4.jpg" alt="Close-up of ladybug on green leaf" loading="lazy" />
+         <img src="g5.jpg" alt="Garden pathway lined with colorful plants" loading="lazy" />
+         <img src="g6.jpg" alt="Close-up of dew drops on flower petals" loading="lazy" />
+         <img src="g7.jpg" alt="Woman planting a flower seedling outdoors" loading="lazy" />
+         <img src="g8.jpg" alt="Organic pest control with natural predators" loading="lazy" />
+         <img src="g9.jpg" alt="Colorful hanging flower baskets in a garden" loading="lazy" />
+         <img src="g10.jpg" alt="Small garden plants growing in nutrient-rich soil" loading="lazy" />
+
+      </div>
+    </section>
+
+    <section aria-label="Extensive Gardening Content" class="large-content" role="region">
+      <div class="container">
+        <h2 style="text-align:center; color: var(--color-primary); margin-bottom: 3rem;">Gardening Wisdom &amp; Tips</h2>
+        <!-- Extremely long content start -->
+        <p>Gardening is a beautiful blend of science and creativity, where understanding each plant's unique needs leads to flourishing ecosystems in your outdoor space. Proper soil preparation, including testing pH levels and nutrient content, is foundational to healthy gardening.</p>
+        <p>Water management is essential. Overwatering can be as harmful as underwatering. Effective watering schedules align with plant types, climate, and seasonal changes. Installing drip irrigation systems can promote water efficiency and healthier plants.</p>
+        <p>Sunlight exposure is critical; some plants thrive in full sun, while others favor shaded environments. Mapping your garden area’s light patterns throughout the day assists in proper plant placement.</p>
+        <p>Organic compost enriches the soil by adding essential nutrients and improving texture, promoting beneficial microbial activity. Homemade composting is a sustainable option reducing kitchen and garden waste.</p>
+        <p>Mulching around plants conserves soil moisture, moderates soil temperature, and prevents weed growth. Organic mulches break down and enhance soil quality over time.</p>
+        <p>Seasonal pruning removes dead or diseased branches, encourages new growth, and maintains desired shapes. Proper pruning techniques prevent damage and ensure plant longevity.</p>
+        <p>Companion planting helps deter pests naturally, improves pollination, and can enhance plant growth. For example, planting basil near tomatoes may improve flavor and repel insects.</p>
+        <p>Integrating native plants supports local wildlife and often requires less maintenance due to their adaptation to the local climate and soil conditions.</p>
+        <p>Gardening also provides mental health benefits by promoting mindfulness, relaxation, and connection with nature. Regular time spent outdoors can reduce stress and enhance well-being.</p>
+        <p>Maintaining a garden journal helps track plant growth, blooming periods, and care routines, assisting in future planning and problem-solving.</p>
+
+        <p>Good garden design balances aesthetics with practicality. Incorporating walkways, seating areas, and water features creates inviting spaces. Layers of plants with varying heights and colors add depth and interest.</p>
+        <p>Using raised garden beds improves drainage and soil control, offering an accessible solution for many gardeners. They also deter pests like slugs and snails.</p>
+        <p>Greenhouses extend the growing season, protect plants from harsh weather, and allow experimentation with more delicate or exotic species.</p>
+        <p>Proper tool maintenance prolongs their life and ensures gardening chores are efficient and enjoyable. Clean and sharpen tools regularly.</p>
+        <p>Plant propagation techniques, such as seed starting, cuttings, and division, allow you to multiply your garden without constant purchase of new plants.</p>
+        <p>Understanding pest life cycles can facilitate targeted, eco-friendly control measures that protect beneficial insects and reduce chemical use.</p>
+        <p>Encouraging pollinators with diverse flowering plants supports ecosystem health and optimizes fruit and vegetable production.</p>
+        <p>Seasonal color schemes in your garden can create dynamic visual effects throughout the year, using annuals and perennials strategically.</p>
+        <p>Fertilizers should be chosen based on soil tests and plant needs. Organic fertilizers support sustainable, long-term soil fertility.</p>
+        <p>It’s important to design your garden with future growth in mind. Plants will grow and spread, and space needs to accommodate their mature size.</p>
+
+        <p>In urban gardening, container plants offer flexibility and the ability to garden in confined spaces, ensuring greenery in every environment.</p>
+        <p>Edible gardens provide fresh herbs, vegetables, and fruits, promoting healthier eating and sustainability.</p>
+        <p>Wildlife gardens create habitats for birds, butterflies, and beneficial insects, enhancing biodiversity.</p>
+        <p>Understanding climate zones is essential for plant selection, ensuring your garden will thrive.</p>
+        <p>Seasonal garden clean-up prepares plants for dormancy and reduces disease risk by removing fallen leaves and debris.</p>
+        <p>Integrating technology, such as soil moisture sensors and automated irrigation, helps maintain optimal garden conditions.</p>
+        <p>Creating themed gardens like Japanese Zen, cottage, or Mediterranean styles can express personality and cultural appreciation.</p>
+        <p>Educating children in gardening fosters appreciation for nature and lifelong good habits.</p>
+        <p>Utilizing vertical gardening maximizes space and provides interesting aesthetic appeal.</p>
+        <p>Regular garden inspections detect early signs of pests or disease, enabling prompt treatment.</p>
+
+        <p>Composting kitchen and garden waste reduces landfill impact and produces valuable fertilizer.</p>
+        <p>Planting cover crops during offseason protects and enriches soil and helps prevent erosion.</p>
+        <p>Proper greenhouse ventilation is vital to prevent fungal diseases and maintain plant health.</p>
+        <p>Water features like ponds and birdbaths attract wildlife and create soothing garden sounds.</p>
+        <p>Choosing drought-resistant plants reduces water consumption and ensures survival during dry spells.</p>
+        <p>Creating shade nets or pergolas protects sensitive plants and provides comfortable outdoor areas.</p>
+        <p>Plant staking supports fragile stems and encourages upright growth.</p>
+        <p>Garden lighting extends enjoyment into evenings while highlighting focal points.</p>
+        <p>Recycling rainwater promotes sustainable water use and conserves resources.</p>
+        <p>Practicing crop rotation in vegetable gardens maintains soil health and reduces pest buildup.</p>
+
+        <p>Plant identification apps assist gardeners in learning about and properly caring for plants.</p>
+        <p>Bird feeders and houses support local bird populations and enhance garden ambience.</p>
+        <p>Seasonal planting calendars based on local conditions optimize yields and blooms.</p>
+        <p>Understanding microclimates in your garden allows placing plants in their ideal spots.</p>
+        <p>Using natural insect repellents keeps the garden eco-friendly and safe for pets.</p>
+        <p>Green walls and living fences offer privacy and ecological benefits.</p>
+        <p>Herbal gardens provide fresh ingredients for cooking and wellness.</p>
+        <p>Garden art and sculptures add personality and charm.</p>
+        <p>Proper soil aeration ensures roots receive oxygen for healthy growth.</p>
+        <p>Regularly updating your garden plan helps maintain its beauty and functionality.</p>
+        <!-- The above section can be repeated for more length if desired -->
+      </div>
+    </section>
+
+    <section aria-label="Disclaimer" class="disclaimer" role="note">
+      <div class="container">
+        <p><strong>Disclaimer:</strong> The content provided on this website is for informational purposes only. Earthy Aura Gardening makes no representations as to the accuracy, completeness, suitability, or validity of any information on this site. All information is provided “as is” and should not be solely relied upon for making decisions regarding your garden. Please consult certified gardening experts for personalized advice.</p>
+      </div>
+    </section>
+
+    <section aria-label="Customer Satisfaction" class="customer-satisfaction" role="region">
+      <div class="container">
+        <h2>Increasing Customer Satisfaction is Our Priority</h2>
+        <p>Over the years, Earthy Aura Gardening has cultivated deep relationships with our clients by providing attentive, reliable, and personalized services. Your satisfaction is the root of our growth. We are committed to nurturing your garden and your trust with unwavering care.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" role="contentinfo">
+    <address>
+      36 East 8th Street, New York, NY 10003, United States
+    </address>
+  </footer>
+</body>
+</html>
+
