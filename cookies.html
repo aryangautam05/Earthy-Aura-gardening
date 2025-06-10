@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cookie Policy - Earthy Aura Gardening</title>
+<style>
+  :root {
+    --color-background: #ffffff;
+    --color-primary: #1f4d2a;
+    --color-secondary: #88b04b;
+    --color-accent: #a4c639;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+    --color-card-bg: #f9fafb;
+    --color-shadow: rgba(107, 114, 128, 0.15);
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap');
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+  }
+  a:hover,
+  a:focus {
+    color: var(--color-secondary);
+    outline: none;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    margin-top: 0;
+    font-weight: 700;
+    line-height: 1.15;
+    user-select: text;
+  }
+  h1 {
+    font-size: 4.5rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+    user-select: text;
+  }
+  ul {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-left: 1.25rem;
+    user-select: text;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--color-background);
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 999;
+    user-select: none;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .logo {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    user-select: text;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: var(--color-secondary);
+    color: white;
+    outline: none;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #eaf4e6, #c5dca0);
+    text-align: center;
+    padding: 6rem 1rem 8rem;
+    user-select: none;
+  }
+  .hero h1 {
+    color: var(--color-primary);
+    text-shadow: none;
+  }
+  .hero p {
+    font-weight: 600;
+    font-size: 1.6rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    user-select: text;
+  }
+  .btn-primary {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    background-color: #111111;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.3);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: var(--color-primary);
+    color: white;
+    transform: scale(1.05);
+    outline: none;
+    box-shadow: 0 12px 40px rgba(31,77,42,0.8);
+  }
+
+  section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  section + section {
+    margin-top: 3rem;
+  }
+
+  .content-section {
+    background: var(--color-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px var(--color-shadow);
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    user-select: text;
+  }
+
+  footer {
+    background: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 1rem;
+    user-select: none;
+  }
+  footer address {
+    font-style: normal;
+    line-height: 1.6;
+    user-select: text;
+  }
+
+  /* Cookie Consent Dialog */
+  #cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-card-bg);
+    color: var(--color-text-primary);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(31,77,42,0.3);
+    max-width: 960px;
+    width: calc(100% - 40px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    font-size: 1rem;
+    z-index: 2000;
+    user-select: text;
+  }
+  #cookie-consent p {
+    flex: 1 1 350px;
+    margin: 0;
+  }
+  #cookie-consent button {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    padding: 0.65rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    user-select: none;
+  }
+  #cookie-consent button:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+  }
+  #cookie-consent button:focus {
+    outline: 2px solid var(--color-secondary);
+  }
+  #cookie-consent #decline {
+    background-color: #555;
+  }
+  #cookie-consent #decline:hover {
+    background-color: #333;
+  }
+
+  @media (max-width: 600px) {
+    #cookie-consent {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+    #cookie-consent p {
+      flex-basis: 100%;
+    }
+    #cookie-consent button {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+    }
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary navigation" class="container" style="display:flex; justify-content:space-between; align-items:center; padding:1.25rem 0;">
+      <div class="logo">Earthy Aura</div>
+      <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0"aria-current="page">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" role="banner" aria-label="Cookie Policy Hero">
+    <div class="container">
+      <h1>Cookie Policy</h1>
+      <p>Learn how Earthy Aura Gardening uses cookies to enhance your experience and protect your privacy.</p>
+    </div>
+  </section>
+
+  <main>
+    <section aria-label="Cookie Policy Content" class="content-section" role="main">
+      <div class="container">
+        <h2>Introduction</h2>
+        <p>Cookies are small text files stored on your device by websites you visit. They are widely used to make websites work better, remember your preferences, and provide analytics.</p>
+        <p>This Cookie Policy explains what cookies are, how we use them, what types we use, and your choices regarding cookies while using the Earthy Aura Gardening website.</p>
+
+        <h2>What Are Cookies?</h2>
+        <p>Cookies are tiny files stored in your browser or device that help websites recognize you and remember your actions or preferences over time.</p>
+        <p>Cookies can be 'session' cookies that expire when you close your browser or 'persistent' cookies that remain until expiry or deletion.</p>
+        <p>Cookies serve many purposes: authenticating users, maintaining session states, personalizing content, and understanding user behavior to improve websites.</p>
+
+        <h2>How We Use Cookies</h2>
+        <p>We use cookies to:</p>
+        <ul>
+          <li>Recognize your device on return visits</li>
+          <li>Remember your preferences and settings</li>
+          <li>Understand how you use our website to improve it</li>
+          <li>Enable secure user authentication and protect your account</li>
+          <li>Deliver relevant marketing and promotions (with your consent)</li>
+          <li>Ensure functionality like shopping carts and forms operate smoothly</li>
+        </ul>
+
+        <h2>Types of Cookies We Use</h2>
+        <h3>Strictly Necessary Cookies</h3>
+        <p>These cookies are essential for the website to function properly. They enable security features, navigation, and access to secure areas.</p>
+
+        <h3>Performance and Analytics Cookies</h3>
+        <p>These help us understand how visitors use our website by collecting anonymous data about page visits, time spent, and navigation patterns.</p>
+
+        <h3>Functionality Cookies</h3>
+        <p>Used to remember choices you make and provide enhanced features such as personalized greetings or saved preferences.</p>
+
+        <h3>Targeting and Advertising Cookies</h3>
+        <p>These cookies deliver ads relevant to your interests and measure the effectiveness of marketing campaigns. We only use these with your consent.</p>
+
+        <h2>Technical Details: Understanding Cookie Types and Security</h2>
+        <p>Cookies are set by web servers via HTTP headers or by JavaScript running in your browser. They include various attributes controlling their behavior and security, such as:</p>
+        <ul>
+          <li><strong>Session vs Persistent:</strong> Session cookies last only while your browser is open; persistent cookies remain stored until expiry or manual deletion.</li>
+          <li><strong>Secure:</strong> Cookies marked as Secure are only transmitted via HTTPS connections, protecting them from interception.</li>
+          <li><strong>HttpOnly:</strong> This flag prevents JavaScript access to cookies, mitigating some cross-site scripting risks.</li>
+          <li><strong>SameSite:</strong> Controls whether cookies are sent with cross-site requests, helping prevent cross-site request forgery (CSRF) attacks.</li>
+          <li><strong>Domain and Path:</strong> Define the scope of where a cookie is sent in subsequent requests.</li>
+        </ul>
+
+        <h2>Lifecycle of a Cookie</h2>
+        <p>When you visit a website, cookies are created and stored on your device. Browsers send relevant cookies back to the server with each request matching domain and path rules. Cookies expire either via a set expiry date or when the session ends.</p>
+        <p>Cookies can be manually deleted by users or automatically cleared depending on browser settings or privacy modes.</p>
+
+        <h2>First-Party vs Third-Party Cookies</h2>
+        <p>First-party cookies are set by the domain you are visiting and typically used for site functionality and personalization. Third-party cookies come from external sites embedded in the page, often used for analytics or advertising.</p>
+        <p>Many browsers restrict third-party cookie usage to protect user privacy, and some tracking protections block them entirely by default.</p>
+
+        <h2>Legal Compliance and Cookies</h2>
+        <p>Cookies are subject to various data protection laws worldwide, such as:</p>
+        <ul>
+          <li><strong>GDPR (General Data Protection Regulation):</strong> Requires informed consent for non-essential cookies in the EU.</li>
+          <li><strong>CCPA (California Consumer Privacy Act):</strong> Grants consumers rights regarding their data including opt-out from sale of personal information.</li>
+          <li><strong>ePrivacy Directive:</strong> Requires cookie consent disclosures in the EU.</li>
+          <li><strong>Other national laws:</strong> Many countries have cookie-related legislation with varying levels of compliance requirements.</li>
+        </ul>
+        <p>Our cookie consent dialog is designed to meet these legal requirements by allowing visitors to accept or decline non-essential cookies.</p>
+
+        <h2>Consent Management</h2>
+        <p>Obtaining and managing user consent accurately is vital. Our site:</p>
+        <ul>
+          <li>Provides clear information on cookie usage</li>
+          <li>Allows users to accept or decline non-essential cookies</li>
+          <li>Stores and respects your choice via your browser localStorage</li>
+          <li>Does not deploy tracking cookies without consent</li>
+        </ul>
+
+        <h2>Managing Cookies on Your Browser</h2>
+        <p>Each browser has mechanisms to manage cookie settings:</p>
+        <ul>
+          <li><strong>Google Chrome:</strong> Settings > Privacy and security > Cookies and other site data</li>
+          <li><strong>Mozilla Firefox:</strong> Preferences > Privacy & Security > Cookies and Site Data</li>
+          <li><strong>Apple Safari:</strong> Preferences > Privacy > Manage Website Data</li>
+          <li><strong>Microsoft Edge:</strong> Settings > Cookies and site permissions > Manage and delete cookies and site data</li>
+        </ul>
+        <p>Adjusting these settings can block, delete, or restrict cookies based on your preferences.</p>
+
+        <h2>Emerging Technologies and The Future of Cookies</h2>
+        <p>With increasing privacy concerns, new standards and technologies are emerging:</p>
+        <ul>
+          <li><strong>SameSite Attribute:</strong> Increasingly enforced by browsers to restrict cross-site cookie sharing.</li>
+          <li><strong>Browser privacy features:</strong> Tracking prevention and fingerprinting resistance reduce cookie availability.</li>
+          <li><strong>Privacy Sandbox:</strong> Google’s initiative to replace third-party cookies with privacy-preserving technologies.</li>
+          <li><strong>Local Storage and IndexedDB:</strong> Alternative client-side data storage mechanisms.</li>
+          <li><strong>Server-Side Tracking:</strong> Moving analytics to backend to enhance privacy.</li>
+        </ul>
+
+        <h2>Security Considerations</h2>
+        <p>Cookies can be targets for attacks such as:</p>
+        <ul>
+          <li><strong>Cross-Site Scripting (XSS):</strong> Mitigated by HttpOnly flags.</li>
+          <li><strong>Cross-Site Request Forgery (CSRF):</strong> Mitigated by SameSite attributes and other anti-CSRF tokens.</li>
+          <li><strong>Session Hijacking:</strong> Encryption, secure cookies, and secure HTTPS prevent interception.</li>
+        </ul>
+        <p>We implement best practices in our cookie handling to protect your information.</p>
+
+        <h2>Auditing and Compliance</h2>
+        <p>Regular cookie audits ensure compliance with policies and laws. We review cookie usage, update cookie lists, and maintain transparency through documentation and user notifications.</p>
+
+        <h2>Accessibility of Cookie Consent</h2>
+        <p>Our cookie consent dialog is built to be accessible by:</p>
+        <ul>
+          <li>Keyboard navigation and focus management</li>
+          <li>ARIA roles and live region announcements</li>
+          <li>Clear, readable text and sufficient contrast</li>
+          <li>Responsive layout on all device sizes</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <h3>What happens if I decline cookies?</h3>
+        <p>If you decline non-essential cookies, some features of the site may be limited or unavailable, but your privacy will be respected.</p>
+
+        <h3>Can I change my cookie preferences later?</h3>
+        <p>Yes, you can clear cookies in your browser or revisit our site to update your consent through the cookie dialog if presented again.</p>
+
+        <h3>Do cookies track me across all sites?</h3>
+        <p>Third-party cookies track behavior across multiple sites, while first-party cookies only remember info on the current site. We only set third-party cookies with your consent.</p>
+
+        <h3>Are cookies safe?</h3>
+        <p>Cookies themselves are safe text files and cannot carry viruses, but misuse and tracking without consent can be privacy concerns, which we address with transparency.</p>
+
+        <h3>Why can't I use some site features if I block cookies?</h3>
+        <p>Many websites rely on cookies for essential functions such as login sessions, language preferences, or shopping carts that require cookies to remember your actions.</p>
+
+        <h2>Conclusion</h2>
+        <p>Cookies play a fundamental role in enhancing website functionality and user experience. Earthy Aura Gardening is committed to using cookies responsibly and respecting your privacy through transparency, control, and compliance with applicable laws.</p>
+        <p>Thank you for reviewing our Cookie Policy. We strive to provide you a safe and enjoyable browsing experience.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" role="contentinfo">
+    <address>
+      36 East 8th Street, New York, NY 10003, United States<br />
+      Phone: +1 (212) 555-0147
+    </address>
+  </footer>
+
+  <div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+    <p>We use cookies to enhance your experience on our site. By clicking "Accept", you consent to the use of non-essential cookies. You may also decline if you wish.</p>
+    <button id="accept-btn" aria-label="Accept cookies">Accept</button>
+    <button id="decline-btn" aria-label="Decline cookies">Decline</button>
+  </div>
+
+<script>
+  (function(){
+    const consentBar = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('accept-btn');
+    const declineBtn = document.getElementById('decline-btn');
+    const consentKey = 'earthyAuraCookieConsent';
+
+    function setConsent(value) {
+      localStorage.setItem(consentKey, value);
+      consentBar.style.display = 'none';
+      // Optionally: enable/disable tracking scripts here based on consent
+      // For demonstration, no actual tracking scripts included.
+    }
+
+    function checkConsent() {
+      const consent = localStorage.getItem(consentKey);
+      if (consent === 'accepted' || consent === 'declined') {
+        consentBar.style.display = 'none';
+      } else {
+        consentBar.style.display = 'flex';
+      }
+    }
+
+    acceptBtn.addEventListener('click', function() {
+      setConsent('accepted');
+    });
+    declineBtn.addEventListener('click', function() {
+      setConsent('declined');
+    });
+
+    checkConsent();
+  })();
+</script>
+
+</body>
+</html>
+
